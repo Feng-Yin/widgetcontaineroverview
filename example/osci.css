@@ -43,10 +43,10 @@ Knob
 
 QwtKnob
 {
-	qproperty-knobStyle: Sunken;
-	qproperty-markerStyle: Nub;
-	qproperty-markerSize: 8;
-	qproperty-borderWidth: 2;
+    qproperty-knobStyle: Sunken;
+    qproperty-markerStyle: Nub;
+    qproperty-markerSize: 8;
+    qproperty-borderWidth: 2;
 }
 
 QLCDNumber

@@ -6,23 +6,23 @@
 
 class ClickableLabel : public QLabel
 {
-	Q_OBJECT
+    Q_OBJECT
 public:
-	explicit ClickableLabel(const QString& text = "", QWidget* parent = 0)
-		: QLabel(parent)
-	{
-		setText(text);
-		setFrameStyle(QFrame::StyledPanel);
-		setScaledContents(true);
-	}
-	~ClickableLabel() {}
+    explicit ClickableLabel(const QString& text = "", QWidget* parent = 0)
+        : QLabel(parent)
+    {
+        setText(text);
+        setFrameStyle(QFrame::StyledPanel);
+        setScaledContents(true);
+    }
+    ~ClickableLabel() {}
 signals:
-	void clicked();
+    void clicked();
 protected:
         void mouseDoubleClickEvent(QMouseEvent* )
-	{
-		emit clicked();
-	}
+    {
+        emit clicked();
+    }
 };
 
 class WidgetContainerOverview : public QWidget
@@ -35,27 +35,27 @@ signals:
 
 public slots:
     void updateOverView();
-	void addWidget(QWidget *widget);
+    void addWidget(QWidget *widget);
 
 protected:
     void mouseDoubleClickEvent(QMouseEvent* event);
 
 private slots:
-	void labelClicked();
+    void labelClicked();
 
 private:
-	void updateStackedWidget(int);
+    void updateStackedWidget(int);
 
 private:
     QGridLayout *gl;
-	QList <ClickableLabel*> labelList;
+    QList <ClickableLabel*> labelList;
 
     QTimer *overviewUpdateTimer;
     QStackedWidget *stackedWidget;
     QPixmap *pixmap;
     QSize initialWidgetSize;
-	const static char *idProperty;
-	int refreshRate;
+    const static char *idProperty;
+    int refreshRate;
 };
 
 #endif // WIDGETCONTAINER_H
